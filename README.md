@@ -6,7 +6,7 @@ Set env variable TOTP_SECRET, then run main.go
 
 ## install
 
-go install github.com/bitmyth/totp
+go install github.com/bitmyth/totp@latest
 
 ## Algo
 

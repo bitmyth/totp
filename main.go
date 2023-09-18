@@ -23,12 +23,10 @@ func main() {
 		return
 	}
 
-	//ticker := time.NewTicker(5 * time.Second).C
 	for {
 		now := time.Now().Unix()
 		q := now / 30
 		r := now % 30
-		//println(r, 30-r)
 
 		c := ComputeCode(secret, q)
 
@@ -38,9 +36,6 @@ func main() {
 			print(moveCursorBegin() + strconv.Itoa(c) + remainSecondsPrompt)
 			time.Sleep(time.Second)
 		}
-
-		//<-ticker
-		//time.Sleep(time.Duration(30-r) * time.Second)
 	}
 }
 

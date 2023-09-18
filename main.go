@@ -25,15 +25,17 @@ func main() {
 
 	for {
 		now := time.Now().Unix()
-		q := now / 30
-		r := now % 30
+		period := int64(30)
+		q := now / period
+		r := now % period
 
 		c := ComputeCode(secret, q)
 
-		for i := int64(0); i < 30-r; i++ {
-			remainSeconds := 30 - r - i
+		for i := int64(0); i < period-r; i++ {
+			remainSeconds := period - r - i
 			remainSecondsPrompt := fmt.Sprintf(" ( %2ds ) ", remainSeconds)
 			print(moveCursorBegin() + strconv.Itoa(c) + remainSecondsPrompt)
+
 			time.Sleep(time.Second)
 		}
 	}

@@ -8,7 +8,6 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"strconv"
 	"time"
 )
 
@@ -34,7 +33,7 @@ func main() {
 		for i := int64(0); i < period-r; i++ {
 			remainSeconds := period - r - i
 			remainSecondsPrompt := fmt.Sprintf(" ( %2ds ) ", remainSeconds)
-			print(moveCursorBegin() + strconv.Itoa(c) + remainSecondsPrompt)
+			print(moveCursorBegin() + fmt.Sprintf("%6d", c) + remainSecondsPrompt)
 
 			time.Sleep(time.Second)
 		}
